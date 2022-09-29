@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<script>
+    function validate_form(){
+        let email= document.forms["register_form"]["email"].value;
+        let username= document.forms["register_form"]["username"].value;
+        let password= document.forms["register_form"]["password"].value;
+
+        if(email == "" || username == "" || password == ""){
+            alert("Wszystkie pola muszą być wypełnione");
+            return false;
+        }
+
+    }
+</script>
+<body>
+    <h1>Rejestracja</h1>
+    <div id="formularz">
+        <form name="register_form" 
+        action="register.php" 
+        method="post" 
+        onsubmit="return validate_form()"
+        >
+        <table>
+            <tr>
+                <td>Nazwa użytkownika</td>
+                <td>
+                    <input type="text" name="username">
+                </td>
+            </tr>
+            <tr>
+                <td>Hało</td>
+                <td>
+                    <input type="text" name="password">
+                </td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>
+                    <input type="email" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="zarejestruj">
+                </td>
+            </tr>
+            
+        </table>
+       
+    </form>
+    </div>
+
+</body>
+</html>
