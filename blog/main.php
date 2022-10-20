@@ -9,7 +9,7 @@
         while($wiersz = $wynik->fetch_assoc()){
             if($_POST["username"] === $wiersz["username"]){
                 
-                if(md5($_POST["password"]) == $wiersz["password"]){
+                if(hash("sha256",$_POST["password"]) == $wiersz["password"]){
                     
                     $_SESSION["USERNAME"] = $wiersz["username"];
                     $_SESSION["ID"] = $wiersz["id"];
