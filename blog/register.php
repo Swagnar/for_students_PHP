@@ -24,7 +24,7 @@
       $kwerenda->bind_param(
          'sss',
          $_POST["username"],
-         md5($_POST["password"]),
+         hash("sha256",$_POST["password"]),
          $_POST["email"]
       );
       if($kwerenda->execute()) {
